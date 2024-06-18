@@ -73,7 +73,7 @@
           </a>
           <ul class="collapse list-unstyled pl-4 w-100" id="tables">
             <li class="nav-item">
-              <a class="nav-link pl-3" href="home.php?r=input_kategori"><span class="ml-1 item-text">Input Kategori</span></a>
+              <a class="nav-link pl-3" href="/kelas/create"><span class="ml-1 item-text">Input Kategori</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link pl-3" href="/kelas"><span class="ml-1 item-text">Lihat Data Kategori</span></a>

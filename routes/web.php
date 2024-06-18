@@ -23,7 +23,12 @@ Route::get('/admins', [AdminController::class, 'index']);
 
 use App\Http\Controllers\KelasController;
 
-Route::get('/kelas', [KelasController::class, 'index']);
+Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
+Route::get('/kelas/create', [KelasController::class, 'create'])->name('kelas.create');
+// Rute untuk memproses form input
+Route::post('/kelas/store', [KelasController::class, 'store'])->name('kelas.store');
+Route::delete('/kelas/{kode_kelas}', [KelasController::class, 'destroy'])->name('kelas.destroy');
+
 
 use App\Http\Controllers\KeretaController;
 
