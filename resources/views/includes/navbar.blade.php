@@ -100,7 +100,7 @@
             <span class="ml-3 item-text">Pengguna</span>
           </a>
           <ul class="collapse list-unstyled pl-4 w-100" id="profile">
-            <a class="nav-link pl-3" href="home.php?r=input_pengguna"><span class="ml-1">Input Pengguna</span></a>
+            <a class="nav-link pl-3" href="/admins/create"><span class="ml-1">Input Pengguna</span></a>
             <a class="nav-link pl-3" href="/admins"><span class="ml-1">Lihat Data Pengguna</span></a>
             <a class="nav-link pl-3" href="home.php?r=aktivitas_pengguna"><span class="ml-1">Aktivitas Pengguna</span></a>
           </ul>

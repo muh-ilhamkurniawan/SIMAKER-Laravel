@@ -11,6 +11,11 @@
             <div class="col-12">
                 <h2 class="mb-2 page-title">Data Pengguna</h2>
                 <p class="card-text">Lihat Data Pengguna. </p>
+                @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+                @endif
                 <div class="row my-4">
                     <!-- Small table -->
                     <div class="col-md-12">
@@ -22,9 +27,9 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Username</th>
-                                    <th>Password</th>
                                     <th>Level</th>
                                     <th>Nama</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,9 +37,15 @@
                                 <tr>
                                     <td>{{ $admin->id_admin }}</td>
                                     <td>{{ $admin->username }}</td>
-                                    <td>{{ $admin->password }}</td>
                                     <td>{{ $admin->level }}</td>
                                     <td>{{ $admin->nama }}</td>
+                                    <td>
+                                        <form action="{{ route('admin.destroy', $admin->id_admin) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus kelas ini?')">Hapus</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
