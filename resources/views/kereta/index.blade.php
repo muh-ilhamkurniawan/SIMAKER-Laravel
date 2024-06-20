@@ -11,6 +11,11 @@
         <div class="col-12">
           <h2 class="mb-2 page-title">Data Kereta</h2>
           <p class="card-text">Lihat Data </p>
+          @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+                @endif
           <div class="row my-4">
             <!-- Small table -->
             <div class="col-md-12">
@@ -26,6 +31,7 @@
                             <th>Kelas</th>
                             <th>Kedatangan</th>
                             <th>Keberangkatan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,6 +43,13 @@
                             <td>{{ $kereta->kelas }}</td>
                             <td>{{ $kereta->kedatangan }}</td>
                             <td>{{ $kereta->keberangkatan }}</td>
+                            <td>
+                              <form action="{{ route('kereta.destroy', $kereta->no_ka) }}" method="POST">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus kereta ini?')">Hapus</button>
+                              </form>
+                          </td>
                         </tr>
                         @endforeach
                     </tbody>

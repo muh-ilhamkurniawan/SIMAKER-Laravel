@@ -56,7 +56,7 @@
           </a>
           <ul class="collapse list-unstyled pl-4 w-100" id="ui-elements">
             <li class="nav-item">
-              <a class="nav-link pl-3" href="home.php?r=input_kereta"><span class="ml-1 item-text">Tambah Kereta</span></a>
+              <a class="nav-link pl-3" href="/kereta/create"><span class="ml-1 item-text">Tambah Kereta</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link pl-3" href="/kereta"><span class="ml-1 item-text">Lihat Data Kereta</span></a>

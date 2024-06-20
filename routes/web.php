@@ -35,7 +35,10 @@ Route::delete('/kelas/{kode_kelas}', [KelasController::class, 'destroy'])->name(
 
 use App\Http\Controllers\KeretaController;
 
-Route::get('/kereta', [KeretaController::class, 'index']);
+Route::get('/kereta', [KeretaController::class, 'index'])->name('kereta.index');
+Route::get('/kereta/create', [KeretaController::class, 'create'])->name('kereta.create');
+Route::post('/kereta/store', [KeretaController::class, 'store'])->name('kereta.store');
+Route::delete('/kereta/{no_ka}', [KeretaController::class, 'destroy'])->name('kereta.destroy');
 
 use App\Http\Controllers\KeterlambatanController;
 
