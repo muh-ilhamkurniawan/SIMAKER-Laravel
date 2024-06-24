@@ -24,6 +24,13 @@ Route::get('/admins/create', [AdminController::class, 'create'])->name('admin.cr
 Route::post('/admins/store', [AdminController::class, 'store'])->name('admin.store');
 Route::delete('/admins/{id_admin}', [AdminController::class, 'destroy'])->name('admin.destroy');
 
+use App\Http\Controllers\UserController;
+
+Route::get('/users', [UserController::class, 'index'])->name('user.index');
+Route::get('/users/create', [UserController::class, 'create'])->name('user.create');
+Route::post('/users/store', [UserController::class, 'store'])->name('user.store');
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+
 use App\Http\Controllers\KelasController;
 
 Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
