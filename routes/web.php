@@ -17,13 +17,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-use App\Http\Controllers\AdminController;
-
-Route::get('/admins', [AdminController::class, 'index'])->name('admin.index');
-Route::get('/admins/create', [AdminController::class, 'create'])->name('admin.create');
-Route::post('/admins/store', [AdminController::class, 'store'])->name('admin.store');
-Route::delete('/admins/{id_admin}', [AdminController::class, 'destroy'])->name('admin.destroy');
-
 use App\Http\Controllers\UserController;
 
 Route::get('/users', [UserController::class, 'index'])->name('user.index');
