@@ -39,6 +39,14 @@ Route::get('/kelas/create', [KelasController::class, 'create'])->name('kelas.cre
 Route::post('/kelas/store', [KelasController::class, 'store'])->name('kelas.store');
 Route::delete('/kelas/{kode_kelas}', [KelasController::class, 'destroy'])->name('kelas.destroy');
 
+use App\Http\Controllers\CategoryController;
+
+Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+// Rute untuk memproses form input
+Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
+Route::delete('/category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+
 
 use App\Http\Controllers\KeretaController;
 
