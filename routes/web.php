@@ -24,13 +24,6 @@ Route::get('/users/create', [UserController::class, 'create'])->name('user.creat
 Route::post('/users/store', [UserController::class, 'store'])->name('user.store');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 
-use App\Http\Controllers\KelasController;
-
-Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
-Route::get('/kelas/create', [KelasController::class, 'create'])->name('kelas.create');
-// Rute untuk memproses form input
-Route::post('/kelas/store', [KelasController::class, 'store'])->name('kelas.store');
-Route::delete('/kelas/{kode_kelas}', [KelasController::class, 'destroy'])->name('kelas.destroy');
 
 use App\Http\Controllers\CategoryController;
 
