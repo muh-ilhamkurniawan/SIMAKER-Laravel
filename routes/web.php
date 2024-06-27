@@ -24,7 +24,6 @@ Route::get('/users/create', [UserController::class, 'create'])->name('user.creat
 Route::post('/users/store', [UserController::class, 'store'])->name('user.store');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 
-
 use App\Http\Controllers\CategoryController;
 
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
@@ -33,13 +32,12 @@ Route::get('/category/create', [CategoryController::class, 'create'])->name('cat
 Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
 Route::delete('/category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
 
+use App\Http\Controllers\TrainController;
 
-use App\Http\Controllers\KeretaController;
-
-Route::get('/kereta', [KeretaController::class, 'index'])->name('kereta.index');
-Route::get('/kereta/create', [KeretaController::class, 'create'])->name('kereta.create');
-Route::post('/kereta/store', [KeretaController::class, 'store'])->name('kereta.store');
-Route::delete('/kereta/{no_ka}', [KeretaController::class, 'destroy'])->name('kereta.destroy');
+Route::get('/train', [TrainController::class, 'index'])->name('train.index');
+Route::get('/train/create', [TrainController::class, 'create'])->name('train.create');
+Route::post('/train/store', [TrainController::class, 'store'])->name('train.store');
+Route::delete('/train/{id}', [TrainController::class, 'destroy'])->name('train.destroy');
 
 use App\Http\Controllers\KeterlambatanController;
 

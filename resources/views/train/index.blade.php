@@ -35,16 +35,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($keretas as $kereta)
+                        @foreach ($trains as $train)
                         <tr>
-                            <td>{{ $kereta->no_ka }}</td>
-                            <td>{{ $kereta->nama }}</td>
-                            <td>{{ $kereta->tujuan }}</td>
-                            <td>{{ $kereta->kelas }}</td>
-                            <td>{{ $kereta->kedatangan }}</td>
-                            <td>{{ $kereta->keberangkatan }}</td>
+                            <td>{{ $train->id }}</td>
+                            <td>{{ $train->name }}</td>
+                            <td>{{ $train->destination }}</td>
+                            <td>{{ $train->category }}</td>
+                            <td>{{ \Carbon\Carbon::createFromFormat('H:i:s', $train->arrival)->format('H:i') }}</td>
+                            <td>{{ \Carbon\Carbon::createFromFormat('H:i:s', $train->departure)->format('H:i') }}</td>
                             <td>
-                              <form action="{{ route('kereta.destroy', $kereta->no_ka) }}" method="POST">
+                              <form action="{{ route('train.destroy', $train->id) }}" method="POST">
                                   @csrf
                                   @method('DELETE')
                                   <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus kereta ini?')">Hapus</button>
