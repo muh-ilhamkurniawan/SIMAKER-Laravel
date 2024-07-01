@@ -27,17 +27,12 @@
   <link rel="stylesheet" href="{{ asset('css/app-dark.css') }}" id="darkTheme" disabled>
 </head>
 
-<body class="vertical light">
+<body class="light">
   <div class="wrapper vh-100">
     <main>
       @yield('content')
     </main>
   </div>
-  <footer class="main-footer">
-    <strong>
-      <marquee scrollamount="10">PT KERETA API INDONESIA (PERSERO) DAOP 5 PURWOKERTO</marquee>
-    </strong>
-  </footer>
   <script src="{{ asset('plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
   <!-- DataTables -->
   <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
