@@ -1,5 +1,7 @@
 @extends('layouts.auth')
 
+@section('title', 'Masuk')
+
 @section('content')
 <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="card col-lg-5 col-md-6 col-10 mx-auto my-3 pt-5 shadow-sm">
@@ -45,7 +47,12 @@
                     </a>
                 @endif
             </form>
-            <p class="mt-2 text-muted text-center">© 2024</p>
+            <div class="text-center">
+                Don't have an account?
+                <a href="/register">Register</a>
+                <p class="mt-2 text-muted ">© 2024</p>
+            </div>
+            
         </div>
     </div>
 </div>

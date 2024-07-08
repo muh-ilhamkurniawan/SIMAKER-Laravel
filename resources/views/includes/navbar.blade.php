@@ -40,14 +40,14 @@
       <i class="fe fe-x"><span class="sr-only"></span></i>
     </a>
     <nav class="vertnav navbar navbar-light">       
-      <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="home.php?r=beranda" id="logo">
+      <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="/" id="logo">
           <span class="avatar avatar-sm mt-2" >
             <img src="{{ asset('images/kai.svg') }}" alt="...">
           </span>
         </a>
       <ul class="navbar-nav flex-fill w-100 mb-2">
         <li class="nav-item">
-        <a href="home.php?r=beranda"  class="nav-link">
+        <a href="/"  class="nav-link">
             <i class="fe fe-home fe-16"></i>
             <span class="ml-3 item-text">Dashboard</span>
           </a>
