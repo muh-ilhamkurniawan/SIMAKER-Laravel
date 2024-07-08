@@ -22,9 +22,7 @@ class RegisterController extends Controller
 
         $user = $this->create($request->all());
 
-        Auth::login($user);
-
-        return redirect()->route('home');
+        return redirect()->route('login')->with('success', 'Pengguna berhasil ditambahkan. Silahkan login menggunakan username dan password yang sudah didaftarkan.');
     }
 
     protected function validator(array $data)
@@ -33,7 +31,6 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'username' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'level' => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -42,7 +39,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'username' => $data['username'],
-            'level' => $data['level'],
+            'level' => 'operator', // Set default value
             'password' => Hash::make($data['password']),
         ]);
     }

@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="d-flex justify-content-center align-items-center vh-100">
-    <div class="card col-lg-5 col-md-6 col-10 mx-auto my-3 pt-5 shadow-sm">
+    <div class="card col-lg-5 col-md-6 col-10 mx-auto my-3 pt-2 shadow-sm">
         <a class="navbar-brand mx-auto mt-2 flex-fill text-center mb-3">
             <img src="{{ asset('images/kai.svg') }}" alt="">
         </a>
@@ -12,6 +12,11 @@
         <h1 class="h6 mb-4 text-center">Sistem Informasi Manajemen Keterlambatan Kereta</h1>
         <h1 class="h6 mb-3 text-center">Login</h1>
         <div class="card-body">
+            @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+            @endif
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
