@@ -41,6 +41,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/train/create', [TrainController::class, 'create'])->name('train.create');
     Route::post('/train/store', [TrainController::class, 'store'])->name('train.store');
     Route::delete('/train/{id}', [TrainController::class, 'destroy'])->name('train.destroy');
+    Route::get('/train/{id}/edit', [TrainController::class, 'edit'])->name('train.edit');
+    Route::put('/train/{id}', [TrainController::class, 'update'])->name('train.update');
+
     
     Route::get('/keterlambatan', [KeterlambatanController::class, 'index']);
 });

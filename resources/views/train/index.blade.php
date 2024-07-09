@@ -44,12 +44,14 @@
                             <td>{{ \Carbon\Carbon::createFromFormat('H:i:s', $train->arrival)->format('H:i') }}</td>
                             <td>{{ \Carbon\Carbon::createFromFormat('H:i:s', $train->departure)->format('H:i') }}</td>
                             <td>
-                              <form action="{{ route('train.destroy', $train->id) }}" method="POST">
+                              <a href="{{ route('train.edit', $train->id) }}" class="btn btn-warning btn-sm text-white">Edit</a>
+                              <form action="{{ route('train.destroy', $train->id) }}" method="POST" style="display: inline-block;">
                                   @csrf
                                   @method('DELETE')
                                   <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus kereta ini?')">Hapus</button>
                               </form>
                           </td>
+                          
                         </tr>
                         @endforeach
                     </tbody>

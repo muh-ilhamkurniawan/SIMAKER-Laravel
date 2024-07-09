@@ -54,4 +54,38 @@ class TrainController extends Controller
 
         return redirect()->route('train.index')->with('success', 'Kereta berhasil dihapus.');
     }
+
+    // Fungsi edit
+    public function edit($id)
+    {
+        $train = Train::findOrFail($id);
+        $categories = Category::all();
+        return view('train.edit', compact('train', 'categories'));
+    }
+
+    // Fungsi update
+    public function update(Request $request, $id)
+    {
+        // Validasi data
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'destination' => 'required|max:255',
+            'category' => 'required|exists:categories,name',
+            'arrival' => 'required',
+            'departure' => 'required'
+        ]);
+
+        // Temukan kereta dan update data
+        $train = Train::findOrFail($id);
+        $train->name = $validatedData['name'];
+        $train->destination = $validatedData['destination'];
+        $train->category = $validatedData['category'];
+        $train->arrival = $validatedData['arrival'];
+        $train->departure = $validatedData['departure'];
+        $train->save();
+
+        // Redirect dengan pesan sukses
+        return redirect()->route('train.index')->with('success', 'Kereta berhasil diupdate.');
+    }
+
 }
