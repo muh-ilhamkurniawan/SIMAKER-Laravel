@@ -36,12 +36,14 @@
                                             <td>{{ $category->id }}</td>
                                             <td>{{ $category->name }}</td>
                                             <td>
-                                                <form action="{{ route('category.destroy', $category->id) }}" method="POST">
+                                                <a href="{{ route('category.edit', $category->id) }}" class="btn btn-warning btn-sm text-white">Edit</a>
+                                                <form action="{{ route('category.destroy', $category->id) }}" method="POST" style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus kelas ini?')">Hapus</button>
                                                 </form>
                                             </td>
+                                            
                                         </tr>
                                         @endforeach
                                     </tbody>

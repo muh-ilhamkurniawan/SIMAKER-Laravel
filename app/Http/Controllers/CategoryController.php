@@ -38,6 +38,29 @@ class CategoryController extends Controller
 
         return redirect()->route('category.index')->with('success', 'Kategori berhasil dihapus.');
     }
+    // Fungsi edit
+    public function edit($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('category.edit', compact('category'));
+    }
+
+    // Fungsi update
+    public function update(Request $request, $id)
+    {
+        // Validasi data
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+        ]);
+
+        // Temukan kategori dan update data
+        $category = Category::findOrFail($id);
+        $category->name = $validatedData['name'];
+        $category->save();
+
+        // Redirect dengan pesan sukses
+        return redirect()->route('category.index')->with('success', 'Kategori berhasil diupdate.');
+    }
 
 
 }
