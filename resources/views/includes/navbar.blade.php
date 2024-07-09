@@ -10,7 +10,7 @@
       </li>
       <li class="nav-item">
       <a class="nav-link text-muted my-2" href="#">
-          <h6>TEST</h6>
+          <h6>{{ Auth::user()->name }}</h6> <!-- Menampilkan username -->
         </a>
       </li>
       <li class="nav-item dropdown">
