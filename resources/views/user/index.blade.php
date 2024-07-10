@@ -1,5 +1,3 @@
-<!-- resources/views/admin/index.blade.php -->
-
 @extends('layouts.app')
 
 @section('title', 'Daftar Pengguna')
@@ -34,17 +32,23 @@
                             </thead>
                             <tbody>
                                 @foreach ($users as $user)
-                                <tr>
+                                <tr class="{{ $user->id === $currentUser->id ? 'table-info' : '' }}">
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->username }}</td>
                                     <td>{{ $user->level }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>
-                                        <form action="{{ route('user.destroy', $user->id) }}" method="POST">
+                                        @if ($user->id !== $currentUser->id)
+                                        <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <form action="{{ route('user.destroy', $user->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus kelas ini?')">Hapus</button>
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus pengguna ini?')">Hapus</button>
                                         </form>
+                                        @else
+                                        <a href="#" class="btn btn-warning btn-sm" >Edit</a>
+                                        <button type="button" class="btn btn-danger btn-sm" disabled>Hapus</button>
+                                        @endif
                                     </td>
                                 </tr>
                                 @endforeach
